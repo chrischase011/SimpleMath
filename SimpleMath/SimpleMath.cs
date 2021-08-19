@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleMath
+namespace SimpleMathDLL
 {
     public class SimpleMath
     {
@@ -36,9 +36,9 @@ namespace SimpleMath
             return n1 * n2;
         }
         // Division
-        public int Divide(int n1, int n2)
+        public float Divide(int n1, int n2)
         {
-            return n1 / n2;
+            return (float) n1 / n2;
         }
 
         //Returns the remainder
@@ -86,12 +86,12 @@ namespace SimpleMath
         }
 
         //Get the Mean
-        public int Mean(int[] num)
+        public double Mean(double[] num)
         {
-            int sum = 0;
-            int ave = 0;
+            double sum = 0;
+            double ave = 0;
 
-            for(int i = 0; i <= num.Length;i++)
+            for(int i = 0; i < num.Length;i++)
             {
                 sum += num[i];
 
@@ -102,11 +102,11 @@ namespace SimpleMath
         }
 
         // Get the median
-        public int Median(int[] num)
+        public double Median(double[] num)
         {
-            int temp;
+            double temp;
             int size = num.Length;
-            int med = 0;
+            double med = 0;
             int check = 0;
             //Sort ascending
             for(int i = 0; i < size; i++)
@@ -115,7 +115,7 @@ namespace SimpleMath
                 {
                     if(num[j] < num[i])
                     {
-                        temp = num[i];
+                        temp =  num[i];
                         num[i] = num[j];
                         num[j] = temp;
                     }
@@ -125,8 +125,20 @@ namespace SimpleMath
             // After sorting in ascending order, get the median
             for(int i = 0; i <= size; i++)
             {
-                check = (size + 1) / 2;
+                if(isOdd(size))
+                {
+                    med = num[(size / 2)];
+                   
+                }
+                else
+                {
+                    med = (num[(size / 2) - 1] + num[size / 2]) / 2.0;
+                }
+
+                /*
+                check = (size / 2) + 1;
                 med = num[check];
+                */
             }
 
             return med;
