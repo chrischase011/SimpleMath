@@ -1,0 +1,8 @@
+C:\Users\Samsung\source\repos\SimpleMath\SimpleMath\bin\Debug\SimpleMath.dll
+C:\Users\Samsung\source\repos\SimpleMath\SimpleMath\bin\Debug\SimpleMath.pdb
+C:\Users\Samsung\source\repos\SimpleMath\SimpleMath\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Samsung\source\repos\SimpleMath\SimpleMath\obj\Debug\SimpleMath.csprojAssemblyReference.cache
+C:\Users\Samsung\source\repos\SimpleMath\SimpleMath\obj\Debug\SimpleMath.csproj.CoreCompileInputs.cache
+C:\Users\Samsung\source\repos\SimpleMath\SimpleMath\obj\Debug\SimpleMath.csproj.CopyComplete
+C:\Users\Samsung\source\repos\SimpleMath\SimpleMath\obj\Debug\SimpleMath.dll
+C:\Users\Samsung\source\repos\SimpleMath\SimpleMath\obj\Debug\SimpleMath.pdb
