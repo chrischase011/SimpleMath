@@ -1,4 +1,1 @@
-C:\Users\Samsung\source\repos\SimpleMath\.vs\SimpleMath\lut\0\b\SimpleMath.dll
 C:\Users\Samsung\source\repos\SimpleMath\.vs\SimpleMath\lut\0\i\SimpleMathDLL\Debug\SimpleMathDLL.csproj.CoreCompileInputs.cache
-C:\Users\Samsung\source\repos\SimpleMath\.vs\SimpleMath\lut\0\i\SimpleMathDLL\Debug\SimpleMathDLL.csproj.CopyComplete
-C:\Users\Samsung\source\repos\SimpleMath\.vs\SimpleMath\lut\0\i\SimpleMathDLL\Debug\SimpleMath.dll

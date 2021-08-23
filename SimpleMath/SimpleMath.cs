@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SimpleLibrary;
 
 namespace SimpleMathDLL
 {
@@ -10,7 +11,7 @@ namespace SimpleMathDLL
     {
         public int n1;
         public int n2;
-
+        public Libs lb = new Libs();
         public SimpleMath()
         {
             Console.WriteLine("##### SIMPLE MATH LIBRARY #####\n\n##### CREATED BY: CHRISTOPHER ROBIN CHASE #####");
@@ -100,29 +101,44 @@ namespace SimpleMathDLL
 
             return ave;
         }
+        public int Mean(int[] num)
+        {
+            int sum = 0;
+            int ave = 0;
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                sum += num[i];
+
+            }
+            ave = sum / num.Length;
+
+            return ave;
+        }
+        public float Mean(float[] num)
+        {
+            float sum = 0;
+            float ave = 0;
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                sum += num[i];
+
+            }
+            ave = sum / num.Length;
+
+            return ave;
+        }
 
         // Get the median
         public double Median(double[] num)
         {
-            double temp;
+            
             int size = num.Length;
             double med = 0;
-            int check = 0;
-            //Sort ascending
-            /*
-            for(int i = 0; i < size; i++)
-            {
-                for(int j = i + 1; j < size; j++)
-                {
-                    if(num[j] < num[i])
-                    {
-                        temp =  num[i];
-                        num[i] = num[j];
-                        num[j] = temp;
-                    }
-                }
-            }
-            */
+            //Sort ascending using my SimpleLibrary.dll
+            
+            lb.SortAsc(num);
             // After sorting in ascending order, get the median
             for(int i = 0; i <= size; i++)
             {
@@ -135,137 +151,126 @@ namespace SimpleMathDLL
                 {
                     med = (num[(size / 2) - 1] + num[size / 2]) / 2.0;
                 }
-
-                /*
-                check = (size / 2) + 1;
-                med = num[check];
-                */
             }
 
             return med;
         }
 
-        public double Mode(double[] num)
+        public int Median(int[] num)
         {
-            double mode = 0.0f;
 
+            int size = num.Length;
+            int med = 0;
+            //Sort ascending using my SimpleLibrary.dll
 
+            lb.SortAsc(num);
+            // After sorting in ascending order, get the median
+            for (int i = 0; i <= size; i++)
+            {
+                if (isOdd(size))
+                {
+                    med = num[(size / 2)];
 
+                }
+                else
+                {
+                    med = (num[(size / 2) - 1] + num[size / 2]) / (int)2.0;
+                }
+            }
+
+            return med;
+        }
+        public float Median(float[] num)
+        {
+
+            int size = num.Length;
+            float med = 0;
+            //Sort ascending using my SimpleLibrary.dll
+
+            lb.SortAsc(num);
+            // After sorting in ascending order, get the median
+            for (int i = 0; i <= size; i++)
+            {
+                if (isOdd(size))
+                {
+                    med = num[(size / 2)];
+
+                }
+                else
+                {
+                    med = (num[(size / 2) - 1] + num[size / 2]) / 2.0f;
+                }
+            }
+
+            return med;
+        }
+        // Mode
+        public int Mode(int[] num)
+        {
+            int count = 1, tempCount;
+            int mode = num[0];
+            int temp = 0;
+            for (int i = 0; i < (num.Length - 1); i++)
+            {
+                temp = num[i];
+                tempCount = 0;
+                for (int j = 1; j < num.Length; j++)
+                {
+                    if (temp == num[j])
+                        tempCount++;
+                }
+                if (tempCount > count)
+                {
+                    mode = temp;
+                    count = tempCount;
+                }
+            }
             return mode;
         }
 
-        // Libs //
-
-        /* Sorting */
-
-        // Ascending
-        public void SortAsc(double[] num)
+        public double Mode(double[] num)
         {
-            double temp;
-            int size = num.Length;
-            for (int i = 0; i < size; i++)
+            int count = 1, tempCount;
+            double mode = num[0];
+            double temp = 0;
+            for (int i = 0; i < (num.Length - 1); i++)
             {
-                for (int j = i + 1; j < size; j++)
+                temp = num[i];
+                tempCount = 0;
+                for (int j = 1; j < num.Length; j++)
                 {
-                    if (num[j] < num[i])
-                    {
-                        temp = num[i];
-                        num[i] = num[j];
-                        num[j] = temp;
-                    }
+                    if (temp == num[j])
+                        tempCount++;
+                }
+                if (tempCount > count)
+                {
+                    mode = temp;
+                    count = tempCount;
                 }
             }
-            
+            return mode;
         }
-        public void SortAsc(int[] num)
+        public float Mode(float[] num)
         {
-            int temp;
-            int size = num.Length;
-            for (int i = 0; i < size; i++)
+            int count = 1, tempCount;
+            float mode = num[0];
+            float temp = 0;
+            for (int i = 0; i < (num.Length - 1); i++)
             {
-                for (int j = i + 1; j < size; j++)
+                temp = num[i];
+                tempCount = 0;
+                for (int j = 1; j < num.Length; j++)
                 {
-                    if (num[j] < num[i])
-                    {
-                        temp = num[i];
-                        num[i] = num[j];
-                        num[j] = temp;
-                    }
+                    if (temp == num[j])
+                        tempCount++;
+                }
+                if (tempCount > count)
+                {
+                    mode = temp;
+                    count = tempCount;
                 }
             }
-
-        }
-
-        public void SortAsc(float[] num)
-        {
-            float temp;
-            int size = num.Length;
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = i + 1; j < size; j++)
-                {
-                    if (num[j] < num[i])
-                    {
-                        temp = num[i];
-                        num[i] = num[j];
-                        num[j] = temp;
-                    }
-                }
-            }
-
-        }
-        // Descending
-        public void SortDesc(double[] num)
-        {
-            double temp;
-            int size = num.Length;
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = i + 1; j < size; j++)
-                {
-                    if (num[i] < num[j])
-                    {
-                        temp = num[i];
-                        num[i] = num[j];
-                        num[j] = temp;
-                    }
-                }
-            }
-        }
-
-        public void SortDesc(int[] num)
-        {
-            int temp;
-            int size = num.Length;
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = i + 1; j < size; j++)
-                {
-                    if (num[i] < num[j])
-                    {
-                        temp = num[i];
-                        num[i] = num[j];
-                        num[j] = temp;
-                    }
-                }
-            }
-        }
-        public void SortDesc(float[] num)
-        {
-            float temp;
-            int size = num.Length;
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = i + 1; j < size; j++)
-                {
-                    if (num[i] < num[j])
-                    {
-                        temp = num[i];
-                        num[i] = num[j];
-                        num[j] = temp;
-                    }
-                }
-            }
+            return mode;
         }
 
     }
