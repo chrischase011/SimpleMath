@@ -109,6 +109,7 @@ namespace SimpleMathDLL
             double med = 0;
             int check = 0;
             //Sort ascending
+            /*
             for(int i = 0; i < size; i++)
             {
                 for(int j = i + 1; j < size; j++)
@@ -121,7 +122,7 @@ namespace SimpleMathDLL
                     }
                 }
             }
-
+            */
             // After sorting in ascending order, get the median
             for(int i = 0; i <= size; i++)
             {
@@ -143,5 +144,129 @@ namespace SimpleMathDLL
 
             return med;
         }
+
+        public double Mode(double[] num)
+        {
+            double mode = 0.0f;
+
+
+
+            return mode;
+        }
+
+        // Libs //
+
+        /* Sorting */
+
+        // Ascending
+        public void SortAsc(double[] num)
+        {
+            double temp;
+            int size = num.Length;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (num[j] < num[i])
+                    {
+                        temp = num[i];
+                        num[i] = num[j];
+                        num[j] = temp;
+                    }
+                }
+            }
+            
+        }
+        public void SortAsc(int[] num)
+        {
+            int temp;
+            int size = num.Length;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (num[j] < num[i])
+                    {
+                        temp = num[i];
+                        num[i] = num[j];
+                        num[j] = temp;
+                    }
+                }
+            }
+
+        }
+
+        public void SortAsc(float[] num)
+        {
+            float temp;
+            int size = num.Length;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (num[j] < num[i])
+                    {
+                        temp = num[i];
+                        num[i] = num[j];
+                        num[j] = temp;
+                    }
+                }
+            }
+
+        }
+        // Descending
+        public void SortDesc(double[] num)
+        {
+            double temp;
+            int size = num.Length;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (num[i] < num[j])
+                    {
+                        temp = num[i];
+                        num[i] = num[j];
+                        num[j] = temp;
+                    }
+                }
+            }
+        }
+
+        public void SortDesc(int[] num)
+        {
+            int temp;
+            int size = num.Length;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (num[i] < num[j])
+                    {
+                        temp = num[i];
+                        num[i] = num[j];
+                        num[j] = temp;
+                    }
+                }
+            }
+        }
+        public void SortDesc(float[] num)
+        {
+            float temp;
+            int size = num.Length;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (num[i] < num[j])
+                    {
+                        temp = num[i];
+                        num[i] = num[j];
+                        num[j] = temp;
+                    }
+                }
+            }
+        }
+
     }
 }
