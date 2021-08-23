@@ -9,17 +9,10 @@ namespace SimpleMathDLL
 {
     public class SimpleMath
     {
-        public int n1;
-        public int n2;
         public Libs lb = new Libs();
         public SimpleMath()
         {
             Console.WriteLine("##### SIMPLE MATH LIBRARY #####\n\n##### CREATED BY: CHRISTOPHER ROBIN CHASE #####");
-        }
-        public SimpleMath(int n1, int n2)
-        {
-            this.n1 = n1;
-            this.n2 = n2;
         }
         //Addition
         public int Add(int n1, int n2)
